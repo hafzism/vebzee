@@ -1,11 +1,11 @@
-import { HeroSection } from "@/components/hero/HeroSection";
+import { ContactSection } from "@/components/contact/ContactSection";
 import { Navbar } from "@/components/layout/Navbar";
 
-export default function Home() {
+export default function ContactPage() {
   return (
     <main className="page-shell">
       <Navbar />
-      <HeroSection />
+      <ContactSection />
     </main>
   );
 }
