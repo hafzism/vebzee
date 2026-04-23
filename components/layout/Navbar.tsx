@@ -89,7 +89,7 @@ export function Navbar() {
             <motion.aside
               key="menu"
               id="site-menu"
-              className="fixed inset-y-0 right-0 z-50 flex h-dvh w-full max-w-[48rem] flex-col justify-between px-10 py-8 text-white sm:px-12 sm:py-10 lg:px-14 lg:py-8"
+              className="fixed inset-y-0 right-0 z-50 flex h-dvh w-full max-w-[48rem] flex-col justify-between px-7 py-7 text-white sm:px-12 sm:py-10 lg:px-14 lg:py-8"
               style={{ backgroundColor: "var(--primary)" }}
               initial={{ x: "108%", opacity: 0.98 }}
               animate={{ x: 0 }}
@@ -101,15 +101,15 @@ export function Navbar() {
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    className="inline-flex size-14 items-center justify-center text-white transition-opacity hover:opacity-70"
+                    className="inline-flex size-10 items-center justify-center text-white transition-opacity hover:opacity-70 sm:size-14"
                     aria-label="Close navigation menu"
                   >
-                    <X size={48} strokeWidth={1.5} />
+                    <X size={30} strokeWidth={1.5} className="sm:h-12 sm:w-12" />
                   </button>
                 </div>
 
                 <nav
-                  className="mt-16 pl-1 sm:mt-20 lg:mt-[4.7rem]"
+                  className="mt-16 sm:mt-20 lg:mt-[4.7rem]"
                   aria-label="Main navigation"
                 >
                   {navItems.map((item, index) => (
@@ -123,7 +123,7 @@ export function Navbar() {
                         href={item.href}
                         onClick={() => setIsOpen(false)}
                         className={cn(
-                          "block text-[clamp(3.8rem,5.8vw,4.55rem)] font-medium leading-[1.02] tracking-[-0.08em] text-white transition-transform duration-300 ease-out hover:translate-x-4",
+                          "block text-[clamp(3.75rem,8vw,4.15rem)] font-medium leading-[1.02] tracking-[-0.08em] text-white transition-transform duration-300 ease-out hover:translate-x-4 sm:text-[clamp(3.8rem,5.8vw,4.55rem)]",
                           pathname === item.href && "translate-x-0",
                         )}
                       >
@@ -134,16 +134,11 @@ export function Navbar() {
                 </nav>
               </div>
 
-              <div className="grid grid-cols-2 gap-x-8 gap-y-4 border-t border-white/18 pt-7 text-[1.04rem] leading-[1.2] tracking-[-0.03em] text-white/92 sm:grid-cols-3 sm:gap-x-10 sm:text-[1.08rem] lg:pt-8">
+              <div className="grid grid-cols-2 gap-x-10 gap-y-4 pt-7 text-[0.95rem] leading-[1.2] tracking-[-0.03em] text-white/92 sm:grid-cols-3 sm:gap-x-10 sm:text-[1.08rem] lg:pt-8">
                 <div className="flex flex-col gap-4">
                   <Link href="/privacy" onClick={() => setIsOpen(false)}>
                     Privacy Policy
                   </Link>
-                  <Link href="/terms" onClick={() => setIsOpen(false)}>
-                    Terms of Service
-                  </Link>
-                </div>
-                <div className="flex flex-col gap-4">
                   {socialItems.slice(0, 2).map((item) => (
                     <a
                       key={item.href}
@@ -157,6 +152,9 @@ export function Navbar() {
                   ))}
                 </div>
                 <div className="flex flex-col gap-4">
+                  <Link href="/terms" onClick={() => setIsOpen(false)}>
+                    Terms of Service
+                  </Link>
                   {socialItems.slice(2).map((item) => (
                     <a
                       key={item.href}
