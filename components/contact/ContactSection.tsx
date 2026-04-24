@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { contactContent } from "@/lib/site-data";
 import { LinkArrow } from "@/components/ui/LinkArrow";
+import { FAQ } from "../services/FAQ";
 
 const contactItems = [
   {
@@ -22,6 +23,29 @@ const contactItems = [
   },
 ] as const;
 
+const trustItems = [
+  {
+    title: "We've been around",
+    description:
+      "Over the past decade, we've built dozens of websites and applications that continue driving value for our clients.",
+  },
+  {
+    title: "We listen carefully",
+    description:
+      "Every project begins by understanding your unique vision, and we ensure your goals remain at the heart of our work.",
+  },
+  {
+    title: "We keep you informed",
+    description:
+      "You'll never wonder about your project's status, as we provide detailed updates and maintain open dialogue throughout.",
+  },
+  {
+    title: "We drive results",
+    description:
+      "While we create beautiful designs, our primary focus is delivering solutions that generate real business impact.",
+  },
+] as const;
+
 const introTransition = {
   duration: 0.65,
   ease: [0.22, 1, 0.36, 1] as const,
@@ -29,7 +53,7 @@ const introTransition = {
 
 export function ContactSection() {
   return (
-    <section className="pb-16 pt-8 sm:pb-20 sm:pt-10 lg:pb-24 lg:pt-[7.25rem]">
+    <section className="pt-8 sm:pt-10 lg:pt-[7.25rem]">
       <div className="px-4 sm:px-8 lg:px-16">
         <div className="grid gap-14 pt-10 sm:pt-12 lg:grid-cols-[0.94fr_1.7fr] lg:gap-14 lg:pt-10">
           <div className="order-1 space-y-1 lg:order-1 lg:space-y-20">
@@ -116,7 +140,10 @@ export function ContactSection() {
               </label>
 
               <div className="pt-2 lg:pt-4">
-                <LinkArrow href={`mailto:${contactContent.email}`} label="Send message" />
+                <LinkArrow
+                  href={`mailto:${contactContent.email}`}
+                  label="Send message"
+                />
               </div>
             </form>
 
@@ -144,7 +171,48 @@ export function ContactSection() {
               ))}
             </motion.div>
           </motion.div>
+        </div>
+      </div>
 
+      <FAQ />
+
+      <div className="px-4 pb-16 pt-2 sm:px-8 sm:pb-20 sm:pt-4 lg:px-16 lg:pb-24 lg:pt-6">
+        <div className="mx-auto max-w-[1860px]">
+          <motion.h2
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={introTransition}
+            className="text-[clamp(2.5rem,6vw,5.15rem)] font-[500] leading-[0.95] tracking-[-0.065em] text-[var(--bg)]"
+          >
+            Why you can trust us
+          </motion.h2>
+
+          <div className="mt-12 grid gap-9 sm:mt-14 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-10 lg:mt-16 lg:grid-cols-4 lg:gap-x-14">
+            {trustItems.map((item, index) => (
+              <motion.article
+                key={item.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.1 + index * 0.07,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                <div className="flex items-start gap-4">
+                  <span className="mt-1 block h-10 w-[4px] shrink-0 bg-[var(--primary)] sm:h-11" />
+                  <h3 className="text-[clamp(1.95rem,2.55vw,3.6rem)] font-[500] leading-[0.97] tracking-[-0.06em] text-[var(--bg)]">
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="mt-7 max-w-[25ch] text-[clamp(1.08rem,1.24vw,2rem)] leading-[1.34] tracking-[-0.03em] text-[color:rgba(10,10,10,0.62)]">
+                  {item.description}
+                </p>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
