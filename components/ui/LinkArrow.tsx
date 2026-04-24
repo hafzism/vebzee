@@ -1,5 +1,9 @@
-import Link from "next/link";
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import type { MouseEvent } from "react";
 
 type LinkArrowProps = {
   href: string;
@@ -12,11 +16,32 @@ export function LinkArrow({
   label,
   inverted = false,
 }: LinkArrowProps) {
+  const pathname = usePathname();
   const textColor = inverted ? "var(--text)" : "var(--bg)";
+  const isHomeHashLink = pathname === "/" && href.startsWith("/#");
+
+  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!isHomeHashLink) {
+      return;
+    }
+
+    const targetId = href.slice(2);
+    const target = document.getElementById(targetId);
+
+    if (!target) {
+      return;
+    }
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", href);
+  };
 
   return (
     <Link
       href={href}
+      onClick={handleClick}
+      scroll={!isHomeHashLink}
       className="group inline-flex items-center gap-3 pb-3 transition-transform duration-300 hover:-translate-y-0.5"
       style={{
         color: textColor,

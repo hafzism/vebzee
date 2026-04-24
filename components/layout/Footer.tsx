@@ -13,9 +13,28 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-white">
-      <section className="border-t border-white/10 px-4 pb-14 pt-16 sm:px-8 sm:pb-16 sm:pt-24 lg:px-16 lg:pb-20 lg:pt-28">
-        <div className="mx-auto flex max-w-[88rem] flex-col items-center text-center">
+    <footer className="relative bg-black text-white">
+      <section className="relative border-t border-white/10 px-4 pb-14 pt-16 sm:px-8 sm:pb-16 sm:pt-24 lg:px-16 lg:pb-20 lg:pt-28">
+        <div
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{
+            maskImage:
+              "radial-gradient(84% 93% at 50% 0%, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%)",
+            WebkitMaskImage:
+              "radial-gradient(84% 93% at 50% 0%, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%)",
+          }}
+        >
+          <video
+            src="https://video.gumlet.io/67a34db7c82041cdc3756469/67a544193dde702a6fe8cd31/download.mp4"
+            loop
+            autoPlay
+            muted
+            playsInline
+            className="h-full w-full object-cover opacity-[0.4]"
+          />
+        </div>
+
+        <div className="relative z-10 mx-auto flex max-w-[88rem] flex-col items-center text-center">
           <h2 className="text-[clamp(3.25rem,8vw,6.6rem)] font-[450] leading-[0.9] tracking-[-0.095em] text-white">
             <span className="hidden lg:block">
               Let&apos;s build something
