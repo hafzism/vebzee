@@ -524,12 +524,12 @@ function AboutFooter() {
             autoPlay
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-[0.4]"
           />
         </div>
 
         <div className="relative z-10 mx-auto flex max-w-[88rem] flex-col items-center text-center">
-          <h2 className="text-[clamp(3.25rem,8vw,6.6rem)] font-[450] leading-[0.9] tracking-[-0.095em] text-white">
+          <h2 className="text-[clamp(3.8rem,8vw,4rem)] font-[450] leading-[1.1] tracking-tight text-white">
             <span className="hidden lg:block">
               Let&apos;s build something
               <br />
