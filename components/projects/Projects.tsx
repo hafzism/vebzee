@@ -13,18 +13,21 @@ export function Projects() {
       tags: ["Branding", "Web Design", "Motion"],
       image: "/projects/healix.png",
       aspectRatio: "aspect-[16/12]",
+      url: "https://healix-theta.vercel.app",
     },
     {
       title: "Hayon",
       tags: ["Branding", "Product Design"],
       image: "/projects/hayon.png",
       aspectRatio: "aspect-[16/9]",
+      url: "https://hayon.site",
     },
     {
       title: "Autospace",
       tags: ["Branding", "Web Design", "Development"],
       image: "/projects/autospace.png",
       aspectRatio: "aspect-[16/9]",
+      url: "https://autospace.space",
     },
   ];
 
@@ -34,12 +37,14 @@ export function Projects() {
       tags: ["Branding", "Product Design"],
       image: "/projects/dgDoctor.png",
       aspectRatio: "aspect-[16/8]",
+      url: "https://dgdoctor.com",
     },
     {
       title: "Genpix",
       tags: ["Branding", "Web Design", "Development"],
       image: "/projects/genpix.png",
       aspectRatio: "aspect-[16/10]",
+      url: "https://gen-pix-gamma.vercel.app",
     },
 
     {
@@ -47,6 +52,7 @@ export function Projects() {
       tags: ["Product Design"],
       image: "/projects/conferoo.png",
       aspectRatio: "aspect-[16/13]",
+      url: "https://conferoo.in",
     },
   ];
 

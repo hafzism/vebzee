@@ -9,14 +9,18 @@ interface ProjectCardProps {
   tags: string[];
   image: string;
   aspectRatio: string;
+  url: string;
   index: number;
 }
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
-export function ProjectCard({ title, tags, image, aspectRatio, index }: ProjectCardProps) {
+export function ProjectCard({ title, tags, image, aspectRatio, url, index }: ProjectCardProps) {
   return (
-    <motion.article 
+    <motion.a 
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -58,7 +62,7 @@ export function ProjectCard({ title, tags, image, aspectRatio, index }: ProjectC
           ))}
         </div>
       </div>
-    </motion.article>
+    </motion.a>
   );
 }
 
