@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 
 const visionStats = [
-  { value: "47+", label: "Projects delivered" },
+  { value: "10+", label: "Projects delivered" },
   { value: "95%", label: "Client retention" },
-  { value: "$21M", label: "Client revenue impacted" },
+  { value: "$10L", label: "Client revenue impacted" },
 ];
 
 const easeOut = [0.22, 1, 0.36, 1] as const;

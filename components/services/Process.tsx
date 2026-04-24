@@ -67,7 +67,7 @@ export function Process() {
         ref={sectionRef}
         className={`bg-[#0C120C] text-white py-16 md:py-[120px] px-6 md:px-[64px] overflow-hidden ${manrope.className}`}
       >
-        <div className="max-w-[1440px] mx-auto">
+        <div className=" mx-auto">
 
           {/* Header */}
           <div className={`transition-all duration-1000 mb-12 md:mb-20 ${hasEntered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
