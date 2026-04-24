@@ -39,9 +39,15 @@ export function Services() {
   return (
     <section className="px-4 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-24">
       <div className="mx-auto">
-        <h2 className="max-w-[25ch] text-[clamp(2.2rem,4.85vw,3.5rem)] leading-[0.98] tracking-[-0.06em] text-[var(--bg)]">
+        <motion.h2
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.55, ease: easeOut }}
+          className="max-w-[25ch] text-[clamp(2.2rem,4.85vw,3.5rem)] leading-[0.98] tracking-[-0.06em] text-[var(--bg)]"
+        >
           This is how we help ambitious companies succeed.
-        </h2>
+        </motion.h2>
 
         <div
           className="mt-14 border-b border-[rgba(10,10,10,0.12)] sm:mt-16"
@@ -58,8 +64,15 @@ export function Services() {
                 onClick={() =>
                   setActiveIndex((current) => (current === index ? null : index))
                 }
+                initial={{ opacity: 0, y: 26 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
                 layout
-                transition={{ duration: 0.4, ease: easeOut }}
+                transition={{
+                  duration: 0.45,
+                  delay: 0.08 + index * 0.07,
+                  ease: easeOut,
+                }}
                 className={`cursor-pointer border-t border-[rgba(10,10,10,0.12)] px-3 py-5 sm:px-6 sm:py-6 lg:px-0 lg:py-8 ${
                   isActive ? "rounded-[14px] bg-[var(--primary)] lg:px-6" : ""
                 }`}
