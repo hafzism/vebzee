@@ -37,7 +37,10 @@ export function Services() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section className="px-4 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-24">
+    <section
+      id="services"
+      className="scroll-mt-24 px-4 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-24"
+    >
       <div className="mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 28 }}

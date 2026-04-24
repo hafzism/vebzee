@@ -1,7 +1,6 @@
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -20,7 +19,7 @@ export const heroContent = {
   description:
     "At Vebzee, we help companies build stronger brands, better products, and websites that actually perform.",
   ctaLabel: "Browse our services",
-  ctaHref: "/contact",
+  ctaHref: "/#services",
   image:
     "https://framerusercontent.com/images/h61nQzBXhG9RjrgFjCdPFcsGVE.jpg?width=2000&height=1312",
 };
