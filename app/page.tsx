@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/hero/HeroSection";
+import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { Process } from "@/components/services/Process";
 import { Services } from "@/components/services/Services";
@@ -11,7 +12,8 @@ export default function Home() {
       <HeroSection />
       <Vision />
       <Services />
-      <Process/>
+      <Process />
+      <Footer />
     </main>
   );
 }
