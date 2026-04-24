@@ -1,8 +1,10 @@
 import { HeroSection } from "@/components/hero/HeroSection";
+import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { Process } from "@/components/services/Process";
 import { Services } from "@/components/services/Services";
 import { Vision } from "@/components/services/Vision";
+import { Projects } from "@/components/projects/Projects";
 
 export default function Home() {
   return (
@@ -11,7 +13,9 @@ export default function Home() {
       <HeroSection />
       <Vision />
       <Services />
-      <Process/>
+      <Process />
+      <Projects />
+      <Footer />
     </main>
   );
 }

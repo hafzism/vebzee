@@ -63,16 +63,16 @@ export function Process() {
   }
 `}</style>
 
-      <section 
+      <section
         ref={sectionRef}
         className={`bg-[#0C120C] text-white py-16 md:py-[120px] px-6 md:px-[64px] overflow-hidden ${manrope.className}`}
       >
         <div className="max-w-[1440px] mx-auto">
-          
+
           {/* Header */}
           <div className={`transition-all duration-1000 mb-12 md:mb-20 ${hasEntered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
-              <p className="text-[14px] md:text-[18px] font-medium tracking-tighter text-white/60">/OUR PROCESS/</p>
+              <p className="text-[14px] md:text-[18px] font-medium tracking-tighter text-white pt-4 ">/OUR PROCESS/</p>
               <h2 className="text-3xl md:text-[52px] leading-[1.1] font-semibold max-w-[800px] tracking-tight">
                 Our mission is to help businesses grow through strategic design.
               </h2>
@@ -84,7 +84,7 @@ export function Process() {
           <div className="flex flex-col lg:flex-row gap-4 h-auto lg:h-[500px]">
             {steps.map((step, index) => {
               const isActive = activeStep === index;
-              
+
               return (
                 <div
                   key={step.id}
@@ -93,24 +93,24 @@ export function Process() {
                   className={`
                     relative framer-physics rounded-[24px] p-8 md:p-[36px] flex flex-col cursor-pointer border
                     ${hasEntered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}
-                    ${isActive 
-                      ? "bg-[#161C16] border-white/20 opacity-100 shadow-2xl" 
+                    ${isActive
+                      ? "bg-[#161C16] border-white/20 opacity-100 shadow-2xl"
                       : "bg-transparent border-white/5 opacity-40 lg:opacity-40"
                     }
                     /* Vertical stack on mobile, horizontal expansion on desktop */
                     w-full lg:w-auto
                     ${isActive ? "lg:flex-[3]" : "lg:flex-[1]"}
                   `}
-                  style={{ 
+                  style={{
                     transitionDelay: hasEntered && !isActive ? `${index * 100}ms` : '0ms',
                     minWidth: isActive ? 'auto' : 'auto', // Reset min-widths for mobile
-                    maxWidth: '100%' 
+                    maxWidth: '100%'
                   }}
                 >
                   <span className="text-[12px] md:text-[14px] font-bold opacity-40 mb-4 md:mb-6">
                     {step.id}
                   </span>
-                  
+
                   <h3 className={`text-2xl md:text-[40px] font-semibold leading-[1.15] tracking-tight transition-all duration-500 mb-6 lg:mb-auto ${isActive ? "text-white" : "text-white/70"}`}>
                     {step.title}
                   </h3>
