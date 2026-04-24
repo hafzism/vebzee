@@ -11,6 +11,7 @@ export default function Home() {
       <HeroSection />
       <Vision />
       <Services />
+      <Process/>
     </main>
   );
 }
