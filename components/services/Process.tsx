@@ -31,13 +31,37 @@ export function Process() {
   return (
     <>
       <style jsx global>{`
-        @keyframes custom-pulse {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.5; transform: scale(0.8); }
-        }
-        .blinking-point { animation: custom-pulse 2s infinite ease-in-out; }
-        .framer-physics { transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
-      `}</style>
+  @keyframes custom-pulse {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    70% {
+      opacity: 0.2;
+      transform: scale(1.8);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2.2);
+    }
+  }
+
+
+
+  .framer-physics {
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+    @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.1; }
+    100% { opacity: 1; }
+  }
+
+  .blinking-point {
+    animation: blink 1.5s infinite ease-in-out;
+  }
+`}</style>
 
       <section 
         ref={sectionRef}
@@ -96,8 +120,8 @@ export function Process() {
                     <p className="text-base md:text-[20px] text-white/50 leading-[1.5] max-w-[380px] mb-8 tracking-tight">
                       {step.description}
                     </p>
-                    <div className="flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full border border-white/10">
-                      <div className="w-[8px] h-[8px] md:w-[10px] md:h-[10px] bg-[#0048F9] rounded-full blinking-point shadow-[0_0_15px_rgba(0,72,249,0.5)]"></div>
+                    <div className="flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full border blinking-point border-white/10">
+                      <div className="w-[14px] h-[14px] md:w-[16px] md:h-[16px] bg-[#0048F9] rounded-full  shadow-[0_0_15px_rgba(0,72,249,0.5)]"></div>
                     </div>
                   </div>
                 </div>
