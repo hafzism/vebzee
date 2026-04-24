@@ -5,6 +5,7 @@ import { Process } from "@/components/services/Process";
 import { Services } from "@/components/services/Services";
 import { Vision } from "@/components/services/Vision";
 import { Projects } from "@/components/projects/Projects";
+import { FAQ } from "@/components/services/FAQ";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Services />
       <Process />
       <Projects />
+      <FAQ />
       <Footer />
     </main>
   );
