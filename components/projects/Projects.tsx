@@ -20,6 +20,12 @@ export function Projects() {
       image: "/projects/hayon.png",
       aspectRatio: "aspect-[16/9]",
     },
+    {
+      title: "Autospace",
+      tags: ["Branding", "Web Design", "Development"],
+      image: "/projects/autospace.png",
+      aspectRatio: "aspect-[16/9]",
+    },
   ];
 
   const rightColumn = [
