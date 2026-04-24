@@ -29,7 +29,7 @@ export const contactContent = {
   title: "Get in Touch",
   intro:
     "Got a project in mind? We'd love to hear about it. Big or small, we're here to help bring your ideas to life.",
-  email: "contact@opushq.com",
+  email: "contact@vebzee.com",
   phone: "+1 (555) 123-4567",
   address: "42 Pixel Place, Suite 404, New York, NY 10012",
 };

@@ -11,7 +11,7 @@ const headlineTransition = {
 
 export function HeroSection() {
   return (
-    <section className="pb-16 pt-4 sm:pb-20 sm:pt-6 lg:pb-[7.25rem]">
+    <section className="pb-16 pt-4 sm:pb-20 sm:pt-6 h-screen lg:pb-[7.25rem]">
       <div className="px-4 sm:px-8 lg:px-16">
         <div className="grid min-h-[50vh] gap-8 pt-14 sm:gap-10 sm:pt-16 lg:grid-cols-[1.5fr_0.5fr] lg:items-end lg:gap-10 lg:pt-[6.4rem]">
           <div className="min-w-0">
